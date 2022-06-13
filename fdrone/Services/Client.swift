@@ -26,4 +26,13 @@ class Client {
             completion(response.result)   
         }
     }
+    
+    static func me(with token: String, andURL url: String, completion: @escaping (Result<Response, AFError>) -> Void) {
+        AF.request(url,
+                   method: .get,
+                   parameters: token).responseDecodable { (response: DataResponse<Response, AFError>) in
+            
+            
+        }
+    }
 }

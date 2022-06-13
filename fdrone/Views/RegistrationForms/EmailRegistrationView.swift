@@ -23,7 +23,7 @@ struct EmailRegistrationView: View {
                     NavigationLink(destination: UsernameRegistrationView(registrationObject: registrationObject)) {
                         Button("이메일 입력") { }
                         .font(.headline)
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.25)
+                        .frame(width: geometry.size.width, height: 60)
                         .foregroundColor(.white)
                         .background(.blue)
                         .cornerRadius(10.0)

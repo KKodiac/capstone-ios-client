@@ -28,6 +28,7 @@ struct LoginView: View {
                         .padding([.trailing,.leading])
                         .textFieldStyle(.roundedBorder)
                         .textInputAutocapitalization(.never)
+                    
                     GeometryReader { geometry in
                         VStack {
                             NavigationLink(destination: MainView(credentialObject: credentialObject), isActive: $credentialObject.isLoggedIn) { EmptyView() }

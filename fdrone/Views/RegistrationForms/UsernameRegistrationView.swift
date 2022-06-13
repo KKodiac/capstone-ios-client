@@ -22,7 +22,7 @@ struct UsernameRegistrationView: View {
                     NavigationLink(destination: PasswordRegistrationView(credentialObject: registrationObject)) {
                         Button("아이디 입력") { }
                         .font(.headline)
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.25)
+                        .frame(width: geometry.size.width, height: 60)
                         .foregroundColor(.white)
                         .background(.blue)
                         .cornerRadius(10.0)

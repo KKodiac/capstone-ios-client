@@ -37,4 +37,8 @@ struct Request {
         static let registrationPath = "/auth/users/"
         static let retrieveTokenPath = "/auth/token/login/"
     }
+    
+    struct MeBody {
+        static let mePath = "/auth/users/me/"
+    }
 }

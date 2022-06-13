@@ -14,6 +14,7 @@ class CredentialObject: ObservableObject {
     @Published var password: String = ""
     @Published var isLoggedIn: Bool = false
     @Published var token: String = ""
+    @Published var userContent: Response?
     
     func requestRegistration() {
         let registration = Registration(email: self.email, username: self.username, password: self.password)
@@ -23,7 +24,7 @@ class CredentialObject: ObservableObject {
             case .success(let content):
                 self.isLoggedIn = true
                 print(self.isLoggedIn)
-                print(content)
+                self.userContent = content
             case .failure(let error):
                 debugPrint(error.localizedDescription)
             }
@@ -39,6 +40,18 @@ class CredentialObject: ObservableObject {
                 print(content.auth_token)
                 self.token = content.auth_token
                 self.isLoggedIn = true
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
+            }
+        }
+    }
+    
+    func requestMe() {
+        let url = Request.ProductionServer.baseURL.appending(Request.MeBody.mePath)
+        Client.me(with: self.token, andURL: url) { result in
+            switch result {
+            case .success(let content):
+                self.userContent = content
             case .failure(let error):
                 debugPrint(error.localizedDescription)
             }

@@ -23,10 +23,11 @@ struct PasswordRegistrationView: View {
                     NavigationLink(destination: MainView(credentialObject: credentialObject), isActive: $credentialObject.isLoggedIn) { EmptyView() }
                     Button("회원가입 완료") {
                         credentialObject.requestRegistration()
+                        print(credentialObject.isLoggedIn)
                         dismiss()
                     }
                         .font(.headline)
-                        .frame(width: geometry.size.width, height: geometry.size.height * 0.25)
+                        .frame(width: geometry.size.width, height: 60)
                         .foregroundColor(.white)
                         .background(.blue)
                         .cornerRadius(10.0)
