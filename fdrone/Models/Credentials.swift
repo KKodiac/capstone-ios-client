@@ -25,7 +25,7 @@ struct Response: Decodable {
 }
 
 struct Token: Decodable {
-    let token: String
+    let auth_token: String
 }
 
 struct Request {

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username = ""
-    @State private var password = ""
+    @ObservedObject var credentialObject = CredentialObject()
     var body: some View {
         NavigationView {
             VStack {
@@ -21,23 +20,25 @@ struct LoginView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .padding()
-                    TextField("아이디", text: $username)
+                    TextField("아이디", text: $credentialObject.username)
                         .padding([.trailing,.leading])
                         .textFieldStyle(.roundedBorder)
-                    SecureField("비밀번호", text: $password)
+                        .textInputAutocapitalization(.never)
+                    SecureField("비밀번호", text: $credentialObject.password)
                         .padding([.trailing,.leading])
                         .textFieldStyle(.roundedBorder)
+                        .textInputAutocapitalization(.never)
                     GeometryReader { geometry in
                         VStack {
-                            NavigationLink(destination: MainView()) {
-                                Button("로그인") {}
+                            NavigationLink(destination: MainView(credentialObject: credentialObject), isActive: $credentialObject.isLoggedIn) { EmptyView() }
+                                Button("로그인") {
+                                    credentialObject.requestLogin()
+                                }
                                 .font(.headline)
                                 .frame(width: geometry.size.width, height: geometry.size.height * 0.25)
                                 .foregroundColor(.white)
                                 .background(.blue)
                                 .cornerRadius(10.0)
-                                .disabled(true)
-                            }
                             
                             NavigationLink(destination: SignUpView()) {
                                 Button("회원가입") {}
@@ -53,6 +54,9 @@ struct LoginView: View {
                     .padding([.top, .leading, .trailing], 18.0)
                 }
                 .padding(.all)
+                .onAppear {
+                    credentialObject.isLoggedIn = false
+                }
                 
             }
             .navigationBarTitle("", displayMode: .inline)

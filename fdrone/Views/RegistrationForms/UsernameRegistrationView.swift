@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UsernameRegistrationView: View {
-    @ObservedObject var registrationObject: RegistrationObject
+    @ObservedObject var registrationObject: CredentialObject
 
     var body: some View {
         GeometryReader { geometry in
@@ -19,7 +19,7 @@ struct UsernameRegistrationView: View {
                     .textInputAutocapitalization(.never)
                 Spacer(minLength: geometry.size.height * 0.3)
                 VStack(alignment: .center) {
-                    NavigationLink(destination: PasswordRegistrationView(registrationObject: registrationObject)) {
+                    NavigationLink(destination: PasswordRegistrationView(credentialObject: registrationObject)) {
                         Button("아이디 입력") { }
                         .font(.headline)
                         .frame(width: geometry.size.width, height: geometry.size.height * 0.25)

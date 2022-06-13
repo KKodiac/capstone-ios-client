@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-class RegistrationObject: ObservableObject {
+class CredentialObject: ObservableObject {
     @Published var email: String = ""
     @Published var username: String = ""
     @Published var password: String = ""
@@ -36,8 +36,9 @@ class RegistrationObject: ObservableObject {
         Client.login(with: login, andURL: url) { result in
             switch result {
             case .success(let content):
-                print(content.token)
-                self.token = content.token
+                print(content.auth_token)
+                self.token = content.auth_token
+                self.isLoggedIn = true
             case .failure(let error):
                 debugPrint(error.localizedDescription)
             }

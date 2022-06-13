@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct PasswordRegistrationView: View {
-    @StateObject var registrationObject: RegistrationObject
+    @StateObject var credentialObject: CredentialObject
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                SecureField("비밀번호", text: $registrationObject.password)
+                SecureField("비밀번호", text: $credentialObject.password)
                     .background(.white)
                     .textFieldStyle(MyTextFieldStyle())
                     .textInputAutocapitalization(.never)
                 Spacer(minLength: geometry.size.height * 0.3)
                 VStack(alignment: .center) {
-                    NavigationLink(destination: MainView(), isActive: $registrationObject.isLoggedIn) { EmptyView() }
+                    NavigationLink(destination: MainView(credentialObject: credentialObject), isActive: $credentialObject.isLoggedIn) { EmptyView() }
                     Button("회원가입 완료") {
-                        registrationObject.requestRegistration()
-                        print(registrationObject.isLoggedIn)
+                        credentialObject.requestRegistration()
                         dismiss()
                     }
                         .font(.headline)
