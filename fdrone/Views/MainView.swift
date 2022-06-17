@@ -13,39 +13,43 @@ struct MainView: View {
     @State private var showWebView = false
     let map = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/map.json"), loopMode: .loop)
     let drone = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/drone.json"), loopMode: .loop)
-    let ok = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/ok.json"), loopMode: .loop)
-    let fire = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/fire.json"), loopMode: .loop)
+    let ok = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/okey.json"), loopMode: .loop)
+    let fire = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/fire-alt.json"), loopMode: .loop)
 
     var body: some View {
         NavigationView {
             VStack {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(.blue)
+                        .foregroundColor(Color.blue)
                     VStack {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                HStack {
-                                    Text(credentialObject.username)
-                                        .fontWeight(.heavy)
-                                    Text("님")
-                                }.padding(.bottom, 2)
-                                HStack {
-                                    Text("행복한 하루 되세요!")
+                        // MARK: 사용자 계정
+                        NavigationLink(destination: UserProfileView()) {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Text(credentialObject.username)
+                                            .fontWeight(.heavy)
+                                        Text("님")
+                                    }.padding(.bottom, 2)
+                                    HStack {
+                                        Text("행복한 하루 되세요!")
+                                    }
                                 }
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                
+                                Spacer()
+                                Image(systemName: "person.circle.fill")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundColor(Color.white)
                             }
-                            .foregroundColor(.white)
-                            .font(.headline)
-                            
-                            Spacer()
-                            Image(systemName: "person.circle.fill")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundColor(Color.white)
                         }
                         Divider()
                         HStack {
                             Spacer()
+                            // MARK: 책임 드론 명
                             HStack {
                                 Text("미등록")
                                     .fontWeight(.medium)
@@ -53,6 +57,7 @@ struct MainView: View {
                             Spacer()
                             Divider()
                             Spacer()
+                            // MARK: 드론 배포 사이트 명
                             HStack {
                                 Text("미등록")
                                     .fontWeight(.medium)
@@ -67,8 +72,9 @@ struct MainView: View {
                 }
                 
                 ZStack {
+                    // MARK: 화재 여부
                     RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(.blue).brightness(0.25)
+                        .foregroundColor(.indigo).brightness(0.1)
                     HStack {
                         VStack {
                             Text("현재는 이상 무!")
@@ -79,7 +85,8 @@ struct MainView: View {
                                 .foregroundColor(.white)
                                 .padding(.top, 3)
                         }
-                        LottieView(state: ok)
+//                        LottieView(state: ok)
+                        LottieView(state: fire)
                     }
                     .padding(30)
                 }
@@ -87,43 +94,50 @@ struct MainView: View {
                 
                 
                 HStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(.gray).brightness(0.36)
-                        LottieView(state: drone)
-                        VStack {
-                            Spacer()
-                            Text("새로 오셨어요?")
-                                .fontWeight(.regular)
-                                .font(.callout)
-                            
-                            Text("드론 등록하기")
-                                .fontWeight(.bold)
-                                .font(.headline)
+                    // MARK: 드론 등록
+                    NavigationLink(destination: DroneRegisterView()) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(.gray).brightness(0.36)
+                            LottieView(state: drone)
+                            VStack {
+                                Spacer()
+                                Text("새로 오셨어요?")
+                                    .fontWeight(.regular)
+                                    .font(.callout)
+                                
+                                Text("드론 등록하기")
+                                    .fontWeight(.bold)
+                                    .font(.headline)
+                            }
+                            .padding(10)
                         }
-                        .padding(10)
                     }
+                    .foregroundColor(.black)
                     
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 15)
-                            .foregroundColor(.green)
-                        LottieView(state: map)
-                        VStack {
-                            Spacer()
-                            Text("비행경로 입력하고")
-                                .fontWeight(.regular)
-                                .font(.callout)
-                            
-                            Text("비행 시작하기")
-                                .fontWeight(.bold)
-                                .font(.headline)
+                    // MARK: 비행경로 및 비행 시작
+                    NavigationLink(destination: FlightRegisterView()){
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 15)
+                                .foregroundColor(.green)
+                            LottieView(state: map)
+                            VStack {
+                                Spacer()
+                                Text("비행경로 입력하고")
+                                    .fontWeight(.regular)
+                                    .font(.callout)
+                                
+                                Text("비행 시작하기")
+                                    .fontWeight(.bold)
+                                    .font(.headline)
+                            }
+                            .padding(10)
                         }
-                        .padding(10)
                     }
+                    .foregroundColor(.black)
                 }
                 
-                
+                // MARK: 실시간 웹뷰 영상
                 Button {
                     showWebView.toggle()
                 } label: {
