@@ -9,13 +9,14 @@ import SwiftUI
 import LottieUI
 
 struct MainView: View {
-    @ObservedObject var credentialObject: CredentialObject
+    @ObservedObject var credentialObject: CredentialViewModel
+    @ObservedObject var droneObject = DroneViewModel()
     @State private var showWebView = false
-    let map = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/map.json"), loopMode: .loop)
-    let drone = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/drone.json"), loopMode: .loop)
-    let ok = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/okey.json"), loopMode: .loop)
-    let fire = LUStateData(type: .filepath("/Users/seanhong/Developer/CapstoneDesign/fdrone/fdrone/Animations/fire-alt.json"), loopMode: .loop)
-
+    
+    @State var map = LUStateData(type: .name("map"), loopMode: .loop)
+    let drone = LUStateData(type: .name("drone"), loopMode: .loop)
+    let ok = LUStateData(type: .name("okey"), loopMode: .loop)
+    let fire = LUStateData(type: .name("fire-alt"), loopMode: .loop)
     var body: some View {
         NavigationView {
             VStack {
@@ -51,7 +52,7 @@ struct MainView: View {
                             Spacer()
                             // MARK: 책임 드론 명
                             HStack {
-                                Text("미등록")
+                                Text(droneObject.drone.drone_alias ?? "미등록")
                                     .fontWeight(.medium)
                             }
                             Spacer()
@@ -59,7 +60,7 @@ struct MainView: View {
                             Spacer()
                             // MARK: 드론 배포 사이트 명
                             HStack {
-                                Text("미등록")
+                                Text(droneObject.drone.surveilance_area ?? "미등록")
                                     .fontWeight(.medium)
                             }
                             Spacer()
@@ -91,11 +92,9 @@ struct MainView: View {
                     .padding(30)
                 }
                 
-                
-                
                 HStack {
                     // MARK: 드론 등록
-                    NavigationLink(destination: DroneRegisterView()) {
+                    NavigationLink(destination: DroneRegisterView(droneViewModel: droneObject, token: $credentialObject.token)) {
                         ZStack {
                             RoundedRectangle(cornerRadius: 15)
                                 .foregroundColor(.gray).brightness(0.36)
@@ -116,7 +115,7 @@ struct MainView: View {
                     .foregroundColor(.black)
                     
                     // MARK: 비행경로 및 비행 시작
-                    NavigationLink(destination: FlightRegisterView()){
+                    NavigationLink(destination: FlightRegisterView(droneObject: droneObject)){
                         ZStack {
                             RoundedRectangle(cornerRadius: 15)
                                 .foregroundColor(.green)
@@ -149,28 +148,24 @@ struct MainView: View {
                 }
             }
             .edgesIgnoringSafeArea(.top)
-        }
-        .padding()
-        .navigationBarBackButtonHidden(true)
-        .navigationTitle("")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Text("어서오세요")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.blue)
-                    .padding(.top, 20)
+            .padding()
+            .navigationTitle("어서오세요")
+            .navigationBarTitleDisplayMode(.large)
+            .onAppear {
+                credentialObject.requestMe()
+                droneObject.token = credentialObject.token
+                droneObject.requestDrone()
             }
         }
-        .onAppear {
-            credentialObject.requestMe()
-        }
+        .navigationTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        let credentials = CredentialObject()
+        let credentials = CredentialViewModel()
         MainView(credentialObject: credentials)
     }
 }

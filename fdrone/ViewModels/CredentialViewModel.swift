@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import Alamofire
 
-class CredentialObject: ObservableObject {
+class CredentialViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var username: String = ""
     @Published var password: String = ""

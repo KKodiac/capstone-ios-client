@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B04245F28624A8C00A148DF /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B04245E28624A8C00A148DF /* MapViewModel.swift */; };
+		0B0424612862529A00A148DF /* DroneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0424602862529A00A148DF /* DroneViewModel.swift */; };
+		0B042465286283A700A148DF /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B042464286283A700A148DF /* FlightViewModel.swift */; };
+		0B04246728629EEC00A148DF /* LiveFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B04246628629EEC00A148DF /* LiveFlightView.swift */; };
 		0B9C7C14285B43FD00F73F2B /* DroneRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7C13285B43FD00F73F2B /* DroneRegisterView.swift */; };
 		0B9C7C16285B461400F73F2B /* FlightRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7C15285B461400F73F2B /* FlightRegisterView.swift */; };
 		0B9C7C18285B463900F73F2B /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7C17285B463900F73F2B /* UserProfileView.swift */; };
-		0B9C7C59285B907600F73F2B /* MapObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7C58285B907600F73F2B /* MapObject.swift */; };
+		0B9C7C59285B907600F73F2B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7C58285B907600F73F2B /* MapView.swift */; };
 		0B9C7D87285B96E700F73F2B /* NMapsMap in Frameworks */ = {isa = PBXBuildFile; productRef = 0B9C7D86285B96E700F73F2B /* NMapsMap */; };
-		0B9C7D89285C463700F73F2B /* MapSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7D88285C463700F73F2B /* MapSceneViewModel.swift */; };
 		0BCD4B282855C3470022D5E3 /* fdroneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B272855C3470022D5E3 /* fdroneApp.swift */; };
 		0BCD4B2A2855C3470022D5E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B292855C3470022D5E3 /* ContentView.swift */; };
 		0BCD4B2C2855C34B0022D5E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BCD4B2B2855C34B0022D5E3 /* Assets.xcassets */; };
@@ -25,9 +28,9 @@
 		0BCD4B422855E5D30022D5E3 /* PasswordRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B412855E5D30022D5E3 /* PasswordRegistrationView.swift */; };
 		0BCD4B44285616C20022D5E3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B43285616C20022D5E3 /* MainView.swift */; };
 		0BCD4B46285624990022D5E3 /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B45285624990022D5E3 /* CustomTextFieldStyle.swift */; };
-		0BCD4B48285642070022D5E3 /* CredentialObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B47285642070022D5E3 /* CredentialObject.swift */; };
+		0BCD4B48285642070022D5E3 /* CredentialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B47285642070022D5E3 /* CredentialViewModel.swift */; };
 		0BCD4B4C28564F670022D5E3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0BCD4B4B28564F670022D5E3 /* Alamofire */; };
-		0BCD4B52285651E50022D5E3 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B51285651E50022D5E3 /* Credentials.swift */; };
+		0BCD4B52285651E50022D5E3 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B51285651E50022D5E3 /* Models.swift */; };
 		0BCD4B55285655DD0022D5E3 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B54285655DD0022D5E3 /* Client.swift */; };
 		0BCD4B5828577BA70022D5E3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B5728577BA70022D5E3 /* WebView.swift */; };
 		0BCD4B5B28577EBB0022D5E3 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD4B5A28577EBB0022D5E3 /* NavigationConfigurator.swift */; };
@@ -42,6 +45,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B04245E28624A8C00A148DF /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		0B0424602862529A00A148DF /* DroneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneViewModel.swift; sourceTree = "<group>"; };
+		0B042464286283A700A148DF /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
+		0B04246628629EEC00A148DF /* LiveFlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFlightView.swift; sourceTree = "<group>"; };
 		0B9C7C13285B43FD00F73F2B /* DroneRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneRegisterView.swift; sourceTree = "<group>"; };
 		0B9C7C15285B461400F73F2B /* FlightRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRegisterView.swift; sourceTree = "<group>"; };
 		0B9C7C17285B463900F73F2B /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
@@ -54,10 +61,9 @@
 		0B9C7C50285B8DC700F73F2B /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		0B9C7C52285B8DDD00F73F2B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		0B9C7C54285B8DF100F73F2B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		0B9C7C58285B907600F73F2B /* MapObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapObject.swift; sourceTree = "<group>"; };
+		0B9C7C58285B907600F73F2B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		0B9C7D80285B917F00F73F2B /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DaumMap.framework; path = "../../../Downloads/IOS_DaumMap_SDK_1.4.0 2/lib/DaumMap.embeddedframework/DaumMap.framework"; sourceTree = "<group>"; };
 		0B9C7D83285B91A900F73F2B /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		0B9C7D88285C463700F73F2B /* MapSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneViewModel.swift; sourceTree = "<group>"; };
 		0BCD4B242855C3470022D5E3 /* fdrone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fdrone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCD4B272855C3470022D5E3 /* fdroneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fdroneApp.swift; sourceTree = "<group>"; };
 		0BCD4B292855C3470022D5E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,8 +77,8 @@
 		0BCD4B412855E5D30022D5E3 /* PasswordRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRegistrationView.swift; sourceTree = "<group>"; };
 		0BCD4B43285616C20022D5E3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0BCD4B45285624990022D5E3 /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
-		0BCD4B47285642070022D5E3 /* CredentialObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialObject.swift; sourceTree = "<group>"; };
-		0BCD4B51285651E50022D5E3 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		0BCD4B47285642070022D5E3 /* CredentialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialViewModel.swift; sourceTree = "<group>"; };
+		0BCD4B51285651E50022D5E3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		0BCD4B54285655DD0022D5E3 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		0BCD4B5728577BA70022D5E3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		0BCD4B5A28577EBB0022D5E3 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
@@ -122,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				0B9C7C15285B461400F73F2B /* FlightRegisterView.swift */,
+				0B9C7C58285B907600F73F2B /* MapView.swift */,
+				0B04246628629EEC00A148DF /* LiveFlightView.swift */,
 			);
 			path = Flight;
 			sourceTree = "<group>";
@@ -172,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				0B9C7C1D285B8C4800F73F2B /* Info.plist */,
-				0BCD4B6B2857B5830022D5E3 /* Animations */,
+				0BCD4B6B2857B5830022D5E3 /* Resources */,
 				0BCD4B5928577E940022D5E3 /* Helpers */,
 				0BCD4B53285655D00022D5E3 /* Services */,
 				0BCD4B50285651C30022D5E3 /* Models */,
@@ -219,9 +227,10 @@
 		0BCD4B49285647190022D5E3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				0BCD4B47285642070022D5E3 /* CredentialObject.swift */,
-				0B9C7C58285B907600F73F2B /* MapObject.swift */,
-				0B9C7D88285C463700F73F2B /* MapSceneViewModel.swift */,
+				0BCD4B47285642070022D5E3 /* CredentialViewModel.swift */,
+				0B04245E28624A8C00A148DF /* MapViewModel.swift */,
+				0B0424602862529A00A148DF /* DroneViewModel.swift */,
+				0B042464286283A700A148DF /* FlightViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -229,7 +238,7 @@
 		0BCD4B50285651C30022D5E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0BCD4B51285651E50022D5E3 /* Credentials.swift */,
+				0BCD4B51285651E50022D5E3 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,7 +262,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		0BCD4B6B2857B5830022D5E3 /* Animations */ = {
+		0BCD4B6B2857B5830022D5E3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				0BCD4B792857C8830022D5E3 /* fire.json */,
@@ -263,7 +272,7 @@
 				0BCD4B7F2857DC5B0022D5E3 /* okey.json */,
 				0BCD4B752857BFC90022D5E3 /* drone.json */,
 			);
-			path = Animations;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,23 +361,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B04246728629EEC00A148DF /* LiveFlightView.swift in Sources */,
 				0BCD4B392855D4740022D5E3 /* SignUpView.swift in Sources */,
 				0BCD4B44285616C20022D5E3 /* MainView.swift in Sources */,
 				0B9C7C14285B43FD00F73F2B /* DroneRegisterView.swift in Sources */,
-				0BCD4B52285651E50022D5E3 /* Credentials.swift in Sources */,
+				0BCD4B52285651E50022D5E3 /* Models.swift in Sources */,
 				0BCD4B372855CC350022D5E3 /* LoginView.swift in Sources */,
-				0BCD4B48285642070022D5E3 /* CredentialObject.swift in Sources */,
+				0BCD4B48285642070022D5E3 /* CredentialViewModel.swift in Sources */,
 				0BCD4B422855E5D30022D5E3 /* PasswordRegistrationView.swift in Sources */,
 				0BCD4B55285655DD0022D5E3 /* Client.swift in Sources */,
 				0BCD4B5D2857807A0022D5E3 /* NavigationBarColor.swift in Sources */,
 				0BCD4B46285624990022D5E3 /* CustomTextFieldStyle.swift in Sources */,
 				0BCD4B2A2855C3470022D5E3 /* ContentView.swift in Sources */,
-				0B9C7C59285B907600F73F2B /* MapObject.swift in Sources */,
+				0B9C7C59285B907600F73F2B /* MapView.swift in Sources */,
 				0BCD4B3B2855DE9B0022D5E3 /* SignUpDetailView.swift in Sources */,
 				0BCD4B3D2855E4A60022D5E3 /* EmailRegistrationView.swift in Sources */,
 				0B9C7C16285B461400F73F2B /* FlightRegisterView.swift in Sources */,
-				0B9C7D89285C463700F73F2B /* MapSceneViewModel.swift in Sources */,
+				0B042465286283A700A148DF /* FlightViewModel.swift in Sources */,
 				0B9C7C18285B463900F73F2B /* UserProfileView.swift in Sources */,
+				0B04245F28624A8C00A148DF /* MapViewModel.swift in Sources */,
+				0B0424612862529A00A148DF /* DroneViewModel.swift in Sources */,
 				0BCD4B282855C3470022D5E3 /* fdroneApp.swift in Sources */,
 				0BCD4B402855E5800022D5E3 /* UsernameRegistrationView.swift in Sources */,
 				0BCD4B5B28577EBB0022D5E3 /* NavigationConfigurator.swift in Sources */,

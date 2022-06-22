@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var credentialObject = CredentialObject()
+    @ObservedObject var credentialObject = CredentialViewModel()
     var body: some View {
         NavigationView {
             VStack {
@@ -36,7 +36,7 @@ struct LoginView: View {
                                     credentialObject.requestLogin()
                                 }
                                 .font(.headline)
-                                .frame(width: geometry.size.width, height: geometry.size.height * 0.25)
+                                .frame(width: geometry.size.width, height: 60)
                                 .foregroundColor(.white)
                                 .background(.blue)
                                 .cornerRadius(10.0)
@@ -44,7 +44,7 @@ struct LoginView: View {
                             NavigationLink(destination: SignUpView()) {
                                 Button("회원가입") {}
                                     .font(.subheadline)
-                                    .frame(width: geometry.size.width, height: geometry.size.height * 0.25)
+                                    .frame(width: geometry.size.width, height: 60)
                                     .foregroundColor(.black)
                                     .background(RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 3).foregroundColor(Color.blue))
                                     .cornerRadius(10.0)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmailRegistrationView: View {
-    @ObservedObject var registrationObject: CredentialObject
+    @ObservedObject var registrationObject: CredentialViewModel
 
 
     var body: some View {

@@ -8,13 +8,45 @@
 import SwiftUI
 
 struct DroneRegisterView: View {
+    @ObservedObject var droneViewModel: DroneViewModel
+    @Binding var token: String
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        GeometryReader { geometry in
+            VStack {
+                VStack {
+                    TextField("드론 애칭을 적어주세요", text: $droneViewModel.droneName)
+                        .background(.white)
+                        .textFieldStyle(DroneTextFieldStyle())
+                        .textInputAutocapitalization(.never)
+                    TextField("감시 위치를 적어주세요", text: $droneViewModel.surveillanceArea)
+                        .background(.white)
+                        .textFieldStyle(DroneTextFieldStyle())
+                        .textInputAutocapitalization(.never)
+                }
+                .navigationTitle("")
+            }
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("뒤로가기") {
+                        dismiss()
+                    }
+                }
 
-struct DroneRegisterView_Previews: PreviewProvider {
-    static var previews: some View {
-        DroneRegisterView()
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: FlightRegisterView(droneObject: droneViewModel), isActive: $droneViewModel.isRegistered) { Text("비행경로 등록하기")
+                            .onTapGesture {
+                                droneViewModel.requestDroneRegistration()
+                        }
+                    }
+                }
+            }
+            .onAppear {
+                droneViewModel.token = token
+                print(droneViewModel.token)
+            }
+        }
+        
     }
 }

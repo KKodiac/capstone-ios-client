@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SignUpDetailView: View {
-    @ObservedObject var registrationObject = CredentialObject()
+    @ObservedObject var registrationObject = CredentialViewModel()
     var body: some View {
         VStack {
             Spacer(minLength: 80)

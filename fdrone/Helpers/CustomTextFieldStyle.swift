@@ -18,3 +18,14 @@ struct MyTextFieldStyle: TextFieldStyle {
         ).padding()
     }
 }
+
+struct DroneTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+        .padding(10)
+        .background(
+            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                .stroke(Color.blue, lineWidth: 2)
+        ).padding()
+    }
+}

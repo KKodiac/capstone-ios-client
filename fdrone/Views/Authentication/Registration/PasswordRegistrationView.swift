@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PasswordRegistrationView: View {
-    @StateObject var credentialObject: CredentialObject
+    @StateObject var credentialObject: CredentialViewModel
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
