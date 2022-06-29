@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PasswordRegistrationView: View {
     @StateObject var credentialObject: CredentialViewModel
+    @ObservedObject var droneObject = DroneViewModel()
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -20,9 +21,10 @@ struct PasswordRegistrationView: View {
                     .textInputAutocapitalization(.never)
                 Spacer(minLength: geometry.size.height * 0.3)
                 VStack(alignment: .center) {
-                    NavigationLink(destination: MainView(credentialObject: credentialObject), isActive: $credentialObject.isLoggedIn) { EmptyView() }
+                    NavigationLink(destination: MainView(credentialObject: credentialObject, droneObject: droneObject), isActive: $credentialObject.isLoggedIn) { EmptyView() }
                     Button("회원가입 완료") {
                         credentialObject.requestRegistration()
+                        credentialObject.requestLogin()
                         print(credentialObject.isLoggedIn)
                         dismiss()
                     }

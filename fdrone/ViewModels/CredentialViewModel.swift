@@ -17,12 +17,10 @@ class CredentialViewModel: ObservableObject {
     
     func requestRegistration() {
         let registration = Registration(email: self.email, username: self.username, password: self.password)
-        let url = Request.ProductionServer.baseURL.appending(Request.RegisterBody.registrationPath)
+        let url = Request.ProductionServer.baseAWSURL.appending(Request.RegisterBody.registrationPath)
         Client.register(with: registration, andURL: url) { result in
             switch result {
             case .success(let content):
-                self.isLoggedIn = true
-                print(self.isLoggedIn)
                 self.userContent = content
             case .failure(let error):
                 debugPrint(error.localizedDescription)
@@ -32,7 +30,7 @@ class CredentialViewModel: ObservableObject {
     
     func requestLogin() {
         let login = Login(username: self.username, password: self.password)
-        let url = Request.ProductionServer.baseURL.appending(Request.RegisterBody.retrieveTokenPath)
+        let url = Request.ProductionServer.baseAWSURL.appending(Request.RegisterBody.retrieveTokenPath)
         Client.login(with: login, andURL: url) { result in
             switch result {
             case .success(let content):
@@ -46,7 +44,7 @@ class CredentialViewModel: ObservableObject {
     }
     
     func requestMe() {
-        let url = Request.ProductionServer.baseURL.appending(Request.MeBody.mePath)
+        let url = Request.ProductionServer.baseAWSURL.appending(Request.MeBody.mePath)
         Client.me(with: self.token, andURL: url) { result in
             switch result {
             case .success(let content):

@@ -17,7 +17,7 @@ class DroneViewModel: ObservableObject {
     
     func requestDroneRegistration() {
         let content = DroneRequest(drone_alias: droneName, surveilance_area: surveillanceArea)
-        let url = Request.ProductionServer.baseURL.appending(Request.DroneBody.dronePath)
+        let url = Request.ProductionServer.baseAWSURL.appending(Request.DroneBody.dronePath)
         let header: HTTPHeaders = [
             "Authorization": "Token \(self.token)",
         ]
@@ -36,16 +36,17 @@ class DroneViewModel: ObservableObject {
         let header: HTTPHeaders = [
             "Authorization": "Token \(self.token)",
         ]
-        let url = Request.ProductionServer.baseURL.appending(Request.DroneBody.dronePath)
+        let url = Request.ProductionServer.baseAWSURL.appending(Request.DroneBody.dronePath)
 
         Client.requestDrone(with: header, andURL: url) { result in
             switch result {
             case .success(let content):
+                self.drone = content.results.first!
+                print(self.drone.drone_alias)
                 if content.results.isEmpty {
                     self.isRegistered = false
                 } else {
                     self.isRegistered = true
-                    self.drone = content.results.first!
                 }
             case .failure(let error):
                 debugPrint(error.localizedDescription)

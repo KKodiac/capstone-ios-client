@@ -10,7 +10,7 @@ import LottieUI
 
 struct MainView: View {
     @ObservedObject var credentialObject: CredentialViewModel
-    @ObservedObject var droneObject = DroneViewModel()
+    @ObservedObject var droneObject: DroneViewModel
     @State private var showWebView = false
     
     @State var map = LUStateData(type: .name("map"), loopMode: .loop)
@@ -144,7 +144,7 @@ struct MainView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .sheet(isPresented: $showWebView) {
-                    WebView(url: URL(string: "http://localhost:8001")!)
+                    WebView(url: URL(string: Request.ProductionServer.droneURL)!)
                 }
             }
             .edgesIgnoringSafeArea(.top)
@@ -166,6 +166,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         let credentials = CredentialViewModel()
-        MainView(credentialObject: credentials)
+        let drones = DroneViewModel()
+        MainView(credentialObject: credentials, droneObject: drones)
     }
 }

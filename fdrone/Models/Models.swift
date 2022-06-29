@@ -73,8 +73,9 @@ struct FlightPathResponse: Decodable {
 
 struct Request {
     struct ProductionServer {
-        static let baseURL = "http://localhost:8000"
-        static let droneURL = "https://9233-118-222-85-227.jp.ngrok.io"
+//        static let baseAWSURL = "http://localhost:8000"
+        static let baseAWSURL = "http://ec2-13-125-138-109.ap-northeast-2.compute.amazonaws.com:8000"
+        static let droneURL = "https://f4b8-118-222-85-227.jp.ngrok.io/drone/detect"
     }
     
     struct RegisterBody {
@@ -94,6 +95,9 @@ struct Request {
         static let flightPath = "/api/v1/flights/"
     }
     
+    struct LiveBody {
+        static let livePath = "/drone/detect"
+    }
     struct StartBody {
         static let startPath = "/drone/detect"
     }

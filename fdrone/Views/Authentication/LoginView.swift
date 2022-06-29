@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var credentialObject = CredentialViewModel()
+    @ObservedObject var droneObject = DroneViewModel()
     var body: some View {
         NavigationView {
             VStack {
@@ -31,7 +32,7 @@ struct LoginView: View {
                     
                     GeometryReader { geometry in
                         VStack {
-                            NavigationLink(destination: MainView(credentialObject: credentialObject), isActive: $credentialObject.isLoggedIn) { EmptyView() }
+                            NavigationLink(destination: MainView(credentialObject: credentialObject, droneObject: droneObject), isActive: $credentialObject.isLoggedIn) { EmptyView() }
                                 Button("로그인") {
                                     credentialObject.requestLogin()
                                 }

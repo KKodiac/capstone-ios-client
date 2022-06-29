@@ -11,6 +11,8 @@
 		0B0424612862529A00A148DF /* DroneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0424602862529A00A148DF /* DroneViewModel.swift */; };
 		0B042465286283A700A148DF /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B042464286283A700A148DF /* FlightViewModel.swift */; };
 		0B04246728629EEC00A148DF /* LiveFlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B04246628629EEC00A148DF /* LiveFlightView.swift */; };
+		0B0424692862A31A00A148DF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B0424682862A31A00A148DF /* GoogleService-Info.plist */; };
+		0B04246C2862A3D400A148DF /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 0B04246B2862A3D400A148DF /* FirebaseMessaging */; };
 		0B9C7C14285B43FD00F73F2B /* DroneRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7C13285B43FD00F73F2B /* DroneRegisterView.swift */; };
 		0B9C7C16285B461400F73F2B /* FlightRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7C15285B461400F73F2B /* FlightRegisterView.swift */; };
 		0B9C7C18285B463900F73F2B /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9C7C17285B463900F73F2B /* UserProfileView.swift */; };
@@ -49,6 +51,7 @@
 		0B0424602862529A00A148DF /* DroneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneViewModel.swift; sourceTree = "<group>"; };
 		0B042464286283A700A148DF /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
 		0B04246628629EEC00A148DF /* LiveFlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFlightView.swift; sourceTree = "<group>"; };
+		0B0424682862A31A00A148DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B9C7C13285B43FD00F73F2B /* DroneRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneRegisterView.swift; sourceTree = "<group>"; };
 		0B9C7C15285B461400F73F2B /* FlightRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRegisterView.swift; sourceTree = "<group>"; };
 		0B9C7C17285B463900F73F2B /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B04246C2862A3D400A148DF /* FirebaseMessaging in Frameworks */,
 				0BCD4B4C28564F670022D5E3 /* Alamofire in Frameworks */,
 				0B9C7D87285B96E700F73F2B /* NMapsMap in Frameworks */,
 				0BCD4B742857BCA00022D5E3 /* LottieUI in Frameworks */,
@@ -179,6 +183,7 @@
 		0BCD4B262855C3470022D5E3 /* fdrone */ = {
 			isa = PBXGroup;
 			children = (
+				0B0424682862A31A00A148DF /* GoogleService-Info.plist */,
 				0B9C7C1D285B8C4800F73F2B /* Info.plist */,
 				0BCD4B6B2857B5830022D5E3 /* Resources */,
 				0BCD4B5928577E940022D5E3 /* Helpers */,
@@ -295,6 +300,7 @@
 				0BCD4B4B28564F670022D5E3 /* Alamofire */,
 				0BCD4B732857BCA00022D5E3 /* LottieUI */,
 				0B9C7D86285B96E700F73F2B /* NMapsMap */,
+				0B04246B2862A3D400A148DF /* FirebaseMessaging */,
 			);
 			productName = fdrone;
 			productReference = 0BCD4B242855C3470022D5E3 /* fdrone.app */;
@@ -328,6 +334,7 @@
 				0BCD4B4A28564F670022D5E3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				0BCD4B722857BC9F0022D5E3 /* XCRemoteSwiftPackageReference "LottieUI" */,
 				0B9C7D85285B96E700F73F2B /* XCRemoteSwiftPackageReference "NMapsMap-SPM" */,
+				0B04246A2862A3D400A148DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 0BCD4B252855C3470022D5E3 /* Products */;
 			projectDirPath = "";
@@ -345,6 +352,7 @@
 			files = (
 				0BCD4B802857DC5B0022D5E3 /* okey.json in Resources */,
 				0BCD4B7C2857C8950022D5E3 /* ok.json in Resources */,
+				0B0424692862A31A00A148DF /* GoogleService-Info.plist in Resources */,
 				0BCD4B6D2857B59C0022D5E3 /* map.json in Resources */,
 				0BCD4B2F2855C34B0022D5E3 /* Preview Assets.xcassets in Resources */,
 				0BCD4B2C2855C34B0022D5E3 /* Assets.xcassets in Resources */,
@@ -595,6 +603,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		0B04246A2862A3D400A148DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		0B9C7D85285B96E700F73F2B /* XCRemoteSwiftPackageReference "NMapsMap-SPM" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jaemyeong/NMapsMap-SPM.git";
@@ -622,6 +638,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0B04246B2862A3D400A148DF /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B04246A2862A3D400A148DF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		0B9C7D86285B96E700F73F2B /* NMapsMap */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B9C7D85285B96E700F73F2B /* XCRemoteSwiftPackageReference "NMapsMap-SPM" */;

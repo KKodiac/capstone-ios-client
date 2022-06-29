@@ -15,7 +15,7 @@ struct LiveFlightView: View {
             Button("홈으로 가기") {
                 dismiss()
             }
-            WebViewFull(url: URL(string: "http://localhost:8001")!)
+            WebViewFull(url: URL(string: Request.ProductionServer.droneURL)!)
         }
         .navigationTitle("")
         .navigationBarHidden(true)

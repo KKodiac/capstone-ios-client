@@ -16,7 +16,7 @@ class FlightViewModel: ObservableObject {
     @Published var flightContent: FlightRequest = FlightRequest(flight_path: [])
     
     func registerFlightPath() {
-        let url = Request.ProductionServer.baseURL.appending(Request.FlightBody.flightPath.appending(flightID).appending("/"))
+        let url = Request.ProductionServer.baseAWSURL.appending(Request.FlightBody.flightPath.appending(flightID).appending("/"))
         let header: HTTPHeaders = [
             "Authorization": "Token \(self.token)",
         ]
@@ -33,7 +33,7 @@ class FlightViewModel: ObservableObject {
     }
     
     func requestFlightPath() {
-        let url = Request.ProductionServer.baseURL.appending(Request.FlightBody.flightPath)
+        let url = Request.ProductionServer.baseAWSURL.appending(Request.FlightBody.flightPath)
         let header: HTTPHeaders = [
             "Authorization": "Token \(self.token)",
         ]
